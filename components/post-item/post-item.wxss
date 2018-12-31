@@ -1,0 +1,46 @@
+/* components/post-item.wxss */
+
+
+.container {
+  position: relative;
+  margin: 15rpx 10rpx;
+  padding: 5rpx 0 10rpx 0;
+  font-size: 30rpx;
+  min-height: 60rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.post {
+  float: left;
+  width: 100rpx;
+}
+
+.title {
+  margin-left: 100rpx;
+}
+
+.tab {
+
+  margin-right: 5rpx;
+  padding: 5rpx 10rpx;
+  background: #e5e5e5;
+  border-radius: 10rpx;
+  color: #999;
+}
+
+.tab.top {
+  background: #80bd01;
+  color: #fff;
+}
+
+.info {
+  font-size: 25rpx;
+}
+
+.info .visit-count {
+  color: #b4b4b4;
+}
+
+.info .reply-count {
+  color: #9e78c0;
+}

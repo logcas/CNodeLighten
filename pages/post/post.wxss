@@ -1,0 +1,66 @@
+/* pages/post/post.wxss */
+@import '/towxml/style/main.wxss';
+@import '/towxml/style/theme/light.wxss';
+
+.container {
+  margin: 0;
+  padding: 0;
+  background: #e1e1e1;
+}
+
+.post {
+  background: #fff;
+}
+
+.title {
+  padding: 10rpx 40rpx;
+  font-size: 50rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info {
+  padding: 10rpx 40rpx 0 40rpx;
+}
+
+.info .info-item {
+  margin-right: 20rpx;
+  color: #838383;
+  font-size: 25rpx;
+}
+
+.content {
+  font-size: 30rpx;
+}
+
+.comment-list {
+  margin-top: 20rpx;
+  background: #fff;
+  width: 100%;
+}
+
+.comment-list .comment {
+  margin: 0rpx 0rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.author {
+  color: #666;
+  font-weight: bold;
+}
+
+.index {
+  color: #08c;
+}
+
+.button-group {
+  margin: 20rpx 20rpx 0 20rpx;
+}
+
+.button-group text {
+  color: #44B549;
+  font-weight: bold;
+}
+
+.button-group button {
+  float: right;
+}

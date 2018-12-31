@@ -1,0 +1,34 @@
+<!--pages/post/post.wxml-->
+<import src="/towxml/entry.wxml" />
+
+<view class='container' style='height:{{height}}px;'>
+  <view class='post'>
+    <view class='title'>
+      <text>{{post.title}}</text>
+    </view>
+    <view class='info'>
+      <text class='info-item'>发表于：{{post.create_at}}</text>
+      <text class='info-item'>作者：{{post.author.loginname}}</text>
+      <text class='info-item'>浏览次数：{{post.visit_count}}</text>
+    </view>
+    <view>
+      <template is="entry" data="{{...post.content}}" />
+    </view>
+  </view>
+  <view class='comment-list'>
+    <view class='button-group'>
+      <text>评论({{post.replies.length}})</text>
+      <button type="primary" size="mini" plain="{{false}}" disabled="{{false}}" bindtap="goComment" hover-class="other-button-hover"> 写评论 </button>
+    </view>
+    <view class='comment' wx:for="{{post.replies}}">
+      <view class='info'>
+        <text class='info-item author'>{{item.author.loginname}}</text>
+        <text class='info-item index'>{{index+1}}楼</text>
+        <text class='info-item'>{{item.create_at}}</text>
+      </view>
+      <view>
+        <template is="entry" data="{{...item.content}}" />
+      </view>
+    </view>
+  </view>
+</view>

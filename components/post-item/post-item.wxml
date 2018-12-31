@@ -1,0 +1,19 @@
+<!--components/post-item.wxml-->
+<view class='container clearFix'>
+  <navigator url="{{'/pages/post/post?id=' + post.id}}">
+    <view class='post'>
+      <span class="tab top" wx-if="{{post.top}}">置顶</span>
+      <span class="tab" wx-if="{{!post.top && post.tab === 'share'}}">分享</span>
+      <span class="tab" wx-if="{{!post.top && post.tab === 'ask'}}">问答</span>
+      <span class="tab" wx-if="{{!post.top && post.tab === 'job'}}">招聘</span>
+      <span class="tab" wx-if="{{!post.top && post.tab === 'good'}}">精华</span>
+    </view>
+    <view class='title'>
+      <text>{{post.title}}</text>
+      <view class='info'>
+        <text class='reply-count'>{{post.reply_count}}</text> /
+        <text class='visit-count'>{{post.visit_count}}</text>
+      </view>
+    </view>
+  </navigator>
+</view>
