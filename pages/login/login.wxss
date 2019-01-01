@@ -1,0 +1,18 @@
+/* pages/login/login.wxss */
+
+@import '/lib/we-ui.wxss';
+
+.container {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+}
+
+.page-section{
+  margin-bottom: 20rpx;
+}

@@ -86,7 +86,7 @@ Page({
     this.getPosts(nextPage,20);
   },
   onLoad() {
-    this.getPosts();
+    //this.getPosts();
     this.getHeight();
   }
 })

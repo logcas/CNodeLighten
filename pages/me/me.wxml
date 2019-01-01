@@ -1,0 +1,20 @@
+<!--pages/me/me.wxml-->
+<view class='container'>
+  <view class='selections'>
+  <view class='selection'>
+    <image src='{{user.avatar_url}}'></image><text>{{user.loginname}}</text>
+  </view>
+  <view class='selection login' hidden="{{hasLogin}}" bindtap='login'>
+    <image src='../../images/icon/login.png'></image><text>登录</text>
+  </view>
+  <view class='selection message' hidden="{{hasLogin}}">
+    <image src='../../images/icon/message.png'></image><text>消息</text>
+  </view>
+  <view class='selection about'>
+    <image src='../../images/icon/about.png'></image><text>关于</text>
+  </view>
+  <view class='selection logout' hidden="{{hasLogin}}">
+    <text>注销</text>
+  </view>
+  </view>
+</view>
