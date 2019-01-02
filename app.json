@@ -5,7 +5,8 @@
     "pages/post/post",
     "pages/comment/comment",
     "pages/me/me",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/person/person"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -52,6 +52,13 @@ Page({
     })
   },
 
+  goPerson() {
+    let that = this;
+    wx.navigateTo({
+      url: '/pages/person/person?id=' + that.data.user.loginname,
+    });
+  },
+
   getUnreadMessage(token) {
     let that = this;
     wx.request({

@@ -55,7 +55,7 @@ Page({
       } else if (key === 'create_at' || key === 'last_reply_at') {
         data[key] = utils.formatTime(new Date(data[key]));
       } else if (key === 'content') {
-        data[key] = app.towxml.toJson(data[key], 'html');
+        data[key] = app.towxml.toJson(data[key], 'markdown');
       }
     }
     return data;
@@ -63,12 +63,17 @@ Page({
 
   getPostDetail() {
     let postId = this.data.postId,
+      token = store.get('accessToken'),
       that = this;
     wx.showLoading({
       title: '加载中',
     });
     wx.request({
       url: 'https://cnodejs.org/api/v1/topic/' + postId,
+      data: {
+        mdrender: false,
+        accesstoken: token
+      },
       success: function(res) {
         console.log(res);
 
@@ -88,7 +93,7 @@ Page({
   onLoad: function(options) {
     this.getHeight();
     this.setData({
-      postId: app.postId
+      postId: options.id
     });
     this.getPostDetail();
   },

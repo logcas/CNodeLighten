@@ -1,0 +1,60 @@
+/* pages/person/person.wxss */
+
+.selections {
+  width: 100%;
+}
+
+.selection {
+  position: relative;
+  margin-bottom: 20rpx;
+  width: 100%;
+  height: 100rpx;
+  font-size: 30rpx;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.selection.info {
+  padding: 20prx;
+  text-align: center;
+  height: inherit;
+}
+
+.selection image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 25rpx;
+  margin-left: 25rpx;
+}
+
+.selection text {
+  position: relative;
+  top: -10rpx;
+  margin-left: 20rpx;
+}
+
+.selection.posts {
+  padding: 10rpx;
+  height: inherit;
+}
+
+.selection-tab {
+  font-size: 45rpx;
+  margin: 10rpx;
+  padding: 10rpx;
+  border-bottom: 2px solid #80bd01;
+}
+
+.selection .post-item {
+  padding: 20rpx;
+}
+
+.selection.posts .post-title {
+  font-size: 30rpx;
+}
+
+.selection.posts .post-time {
+  font-size: 25rpx;
+  color: #999;
+}

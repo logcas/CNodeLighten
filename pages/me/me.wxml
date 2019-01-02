@@ -1,7 +1,7 @@
 <!--pages/me/me.wxml-->
 <view class='container'>
   <view class='selections'>
-  <view class='selection' hidden="{{!hasLogin}}">
+  <view class='selection' hidden="{{!hasLogin}}" bindtap='goPerson'>
     <image src='{{user.avatar_url}}'></image><text>{{user.loginname}}</text>
   </view>
   <view class='selection login' hidden="{{hasLogin}}" bindtap='login'>
@@ -9,6 +9,9 @@
   </view>
   <view class='selection message' hidden="{{!hasLogin}}">
     <image src='../../images/icon/message.png'></image><text>消息({{count}})</text>
+  </view>
+  <view class='selection message' hidden="{{!hasLogin}}">
+    <image src='../../images/icon/message.png'></image><text>我的收藏</text>
   </view>
   <view class='selection about'>
     <image src='../../images/icon/about.png'></image><text>关于</text>
