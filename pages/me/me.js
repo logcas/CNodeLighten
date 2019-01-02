@@ -23,33 +23,46 @@ Page({
     });
   },
 
+  logout() {
+    let that = this;
+    wx.showLoading({
+      title: '正在注销',
+    });
+    store.clear({
+      success: function() {
+        wx.hideLoading();
+        wx.showToast({
+          title: '注销成功',
+          duration: 2000
+        });
+      },
+      fail: function() {
+        wx.hideLoading();
+        wx.showToast({
+          title: '注销失败',
+          duration: 2000
+        });
+      },
+      complete: function() {
+        that.setData({
+          hasLogin: false,
+          user:{}
+        });
+      }
+    })
+  },
+
   getUnreadMessage(token) {
     let that = this;
     wx.request({
       url: 'https://cnodejs.org/api/v1/message/count',
       data: {
-        accessToken: token
+        accesstoken: token
       },
       method: 'GET',
       success: function(res) {
         that.setData({
           count: res.data.data
-        });
-      }
-    });
-  },
-
-  getUser(token) {
-    let that = this;
-    wx.request({
-      url: 'https://cnodejs.org/api/v1/accesstoken',
-      data: {
-        accessToken: token
-      },
-      method: 'POST',
-      success: function(res) {
-        that.setData({
-          user: res.data.data
         });
       }
     });
@@ -76,14 +89,20 @@ Page({
    */
   onShow: function () {
     let token = store.get('accessToken');
+    console.log(token);
     if(token) {
-      if(!this.data.hasLogin) {
-        this.getUser();
-        this.getUnreadMessage();
+        let loginname = store.get('loginname'),
+            avatar_url = store.get('avatar_url'),
+            id = store.get('id');
+        this.getUnreadMessage(token);
         this.setData({
-          hasLogin: true
+          hasLogin: true,
+          user: {
+            loginname,
+            avatar_url,
+            id
+          }
         });
-      }
     }
   },
 

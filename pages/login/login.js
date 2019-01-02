@@ -27,7 +27,10 @@ Page({
         console.log(res);
         wx.hideLoading();
         if(res.data.success) {
-          store.set('accessToken', e.detail.value.accesstoken);
+          store.set('accessToken', token);
+          store.set('loginname',res.data.loginname);
+          store.set('avatar_url',res.data.avatar_url);
+          store.set('id',res.data.id);
           wx.navigateBack({
             delta:-1
           });

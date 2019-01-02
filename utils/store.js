@@ -33,4 +33,8 @@ store.remove = function(key) {
   }
 }
 
+store.clear = function(options) {
+  wx.clearStorage(options);
+}
+
 module.exports = store;
