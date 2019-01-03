@@ -20,7 +20,7 @@
       <text>评论({{post.replies.length}})</text>
       <button type="primary" size="mini" plain="{{false}}" disabled="{{false}}" bindtap="goComment" hover-class="other-button-hover"> 写评论 </button>
     </view>
-    <view class='comment' wx:for="{{post.replies}}">
+    <view class='comment' wx:for="{{post.replies}}" wx:key="id">
       <view class='info'>
         <text class='info-item author'>{{item.author.loginname}}</text>
         <text class='info-item index'>{{index+1}}楼</text>

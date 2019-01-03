@@ -1,12 +1,12 @@
 <!--index.wxml-->
 <scroll-view class="container" style="height:{{height}}px" scroll-y bindscrolltolower="lower">
   <view class='navbar'>
-    <view wx:for="{{nav}}" class="nav-item">
+    <view wx:for="{{nav}}" class="nav-item" wx:key="tab">
        <text data-tab="{{item.tab}}" bindtap="showByTab">{{item.name}}</text>
     </view>
   </view>
   <view class='posts'>
-  <block wx:for="{{posts}}">
+  <block wx:for="{{posts}}" wx:key="id">
     <post-item post="{{item}}" bindtap="goDetail" data-id="{{item.id}}" data-title="{{item.title}}"></post-item>
   </block>
   </view>
