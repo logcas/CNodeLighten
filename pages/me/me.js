@@ -17,6 +17,24 @@ Page({
     }
   },
 
+  goMessage() {
+    wx.navigateTo({
+      url: '/pages/message/message',
+    });
+  },
+
+  goCollection() {
+    wx.navigateTo({
+      url: '/pages/collection/collection',
+    });
+  },
+
+  goAbout() {
+    wx.navigateTo({
+      url: '/pages/about/about',
+    });
+  },
+
   login() {
     wx.navigateTo({
       url: '/pages/login/login',

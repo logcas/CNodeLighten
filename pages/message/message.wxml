@@ -1,0 +1,28 @@
+<!--pages/message/message.wxml-->
+<view class='container'>
+ <view class='container-body'>
+  <view class='message-block'>
+    <view class='block-title'>
+      <text>未读消息</text>
+      <button type="primary" size="mini" plain="{{false}}" disabled="{{markButton.disabled}}"  loading="{{markButton.showLoading}}" bindtap="markAll" hover-class="other-button-hover">{{markButton.text}}</button>
+    </view>
+    <view class='block-content'>
+      <view hidden="{{message.hasnot_read_messages.length!==0}}">暂无未读消息</view>
+      <view wx:for="{{message.hasnot_read_messages}}" wx:key="id">
+        <message-item message="{{item}}" bindtap='goDetail'></message-item>
+      </view>
+    </view>
+  </view>
+  <view class='message-block'>
+    <view class='block-title'>
+      <text>已读消息</text>
+    </view>
+    <view class='block-content'>
+      <view hidden="{{message.has_read_messages.length!==0}}">暂无未读消息</view>
+      <view wx:for="{{message.has_read_messages}}" wx:key="id">
+        <message-item message="{{item}}" bindtap='goDetail'></message-item>
+      </view>
+    </view>
+  </view>
+  </view>
+</view>

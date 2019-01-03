@@ -1,0 +1,13 @@
+<!--components/message-item/message-item.wxml-->
+<view class='message-item'>
+  <view class='message-content'>{{message.topic.title}}</view>
+  <view class='message-info'>
+    <view class='author'>
+      <image class='avatar' src="{{message.author.avatar_url}}"></image>
+      <text class='loginname'>{{message.author.loginname}}</text>
+    </view>
+    <view class='message-time'>
+      {{message.reply.create_at}}
+    </view>
+  </view>
+</view>

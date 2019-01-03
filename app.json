@@ -6,7 +6,10 @@
     "pages/comment/comment",
     "pages/me/me",
     "pages/login/login",
-    "pages/person/person"
+    "pages/person/person",
+    "pages/message/message",
+    "pages/collection/collection",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",

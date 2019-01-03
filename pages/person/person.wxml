@@ -23,7 +23,7 @@
   </view>
     <view class='selection posts'>
     <text class='selection-tab'>最近评论</text>
-    <view hidden="{{data.recent_replies.length}}">暂无发帖</view>
+    <view hidden="{{data.recent_replies.length}}">暂无评论</view>
     <view class='post-item' wx:for="{{data.recent_replies}}" wx:key="id">
       <view class='post-title'><navigator url="../../pages/post/post?id={{item.id}}">Reply:{{item.title}}</navigator></view>
       <view class='post-time'>{{item.last_reply_at}}</view>

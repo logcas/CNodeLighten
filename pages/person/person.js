@@ -1,4 +1,7 @@
 // pages/person/person.js
+
+const { formatTime } = require('../../utils/util.js');
+
 Page({
 
   /**
@@ -19,6 +22,7 @@ Page({
         console.log(res);
         wx.hideLoading();
         if (res.data.success) {
+          res.data.data['create_at'] = formatTime(new Date(res.data.data['create_at']));
           that.setData({
             data: res.data.data
           });

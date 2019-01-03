@@ -1,0 +1,33 @@
+/* components/message-item/message-item.wxss */
+
+.message-item .message-content {
+  font-size: 35rpx;
+}
+
+.message-item .message-info {
+  position: relative;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  height: 50rpx;
+}
+
+.message-info .author .avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+
+.message-info .author .loginname {
+  position: relative;
+  top: -10rpx;
+  line-height: 50rpx;
+  margin-left: 20rpx;
+}
+
+.message-info .message-time {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  font-size: 25rpx;
+  color: #999;
+}
