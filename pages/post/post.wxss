@@ -48,6 +48,11 @@
   font-weight: bold;
 }
 
+.post-author {
+  font-weight: bold;
+  color: #44B549;
+}
+
 .index {
   color: #08c;
 }
@@ -63,4 +68,8 @@
 
 .button-group button {
   float: right;
+}
+
+.control {
+  text-align: center;
 }

@@ -14,6 +14,9 @@
     <view>
       <template is="entry" data="{{...post.content}}" />
     </view>
+    <view class='control'>
+      <button type="default" size="mini" plain="{{false}}" disabled="{{false}}"  hover-class="other-button-hover" bindtap='doCollect'> {{post.is_collect ? '取消收藏' : '收藏本文'}} </button>
+    </view>
   </view>
   <view class='comment-list'>
     <view class='button-group'>
@@ -25,6 +28,7 @@
         <text class='info-item author'>{{item.author.loginname}}</text>
         <text class='info-item index'>{{index+1}}楼</text>
         <text class='info-item'>{{item.create_at}}</text>
+        <text class='info-item post-author' hidden="{{!(item.author.loginname === post.author.loginname)}}">楼主</text>
       </view>
       <view>
         <template is="entry" data="{{...item.content}}" />

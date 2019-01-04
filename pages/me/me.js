@@ -24,8 +24,9 @@ Page({
   },
 
   goCollection() {
+    let loginname = this.data.user.loginname;
     wx.navigateTo({
-      url: '/pages/collection/collection',
+      url: '/pages/collection/collection?loginname=' + loginname,
     });
   },
 

@@ -69,10 +69,6 @@ Page({
       },
     })
   },
-  goDetail(event) {
-    app.postId = event.currentTarget.dataset.id;
-    app.postTitle = event.currentTarget.dataset.title;
-  },
   showByTab(event) {
     this.setData({
       currentTab: event.currentTarget.dataset.tab,
@@ -86,7 +82,7 @@ Page({
     this.getPosts(nextPage,20);
   },
   onLoad() {
-    //this.getPosts();
+    this.getPosts();
     this.getHeight();
   }
 })

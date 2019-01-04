@@ -7,7 +7,7 @@
   </view>
   <view class='posts'>
   <block wx:for="{{posts}}" wx:key="id">
-    <post-item post="{{item}}" bindtap="goDetail" data-id="{{item.id}}" data-title="{{item.title}}"></post-item>
+    <post-item post="{{item}}" data-id="{{item.id}}" data-title="{{item.title}}"></post-item>
   </block>
   </view>
 </scroll-view>

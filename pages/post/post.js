@@ -14,7 +14,61 @@ Page({
     postId: '',
     post: {},
     height: '',
-    article: {}
+    article: {},
+    accessToken: '',
+    collect: '',
+  },
+
+  doCollect(event) {
+    let accesstoken = this.data.accessToken;
+    if(!accesstoken) {
+      wx.showToast({
+        title: '请先登录',
+        icon:'none',
+        duration:2000
+      });
+      return;
+    }
+    let is_collect = this.data.post.is_collect;
+    let url = is_collect ? 'https://cnodejs.org/api/v1/topic_collect/de_collect' : 'https://cnodejs.org/api/v1/topic_collect/collect';
+    let action = is_collect ? '取消收藏' : '收藏';
+    let topic_id = this.data.postId,
+        that = this;
+    wx.request({
+      url,
+      method: 'POST',
+      data: {
+        accesstoken,
+        topic_id
+      },
+      success: function(res) {
+        if(res.data.success) {
+          wx.showToast({
+            title: action + '成功',
+            icon: 'success',
+            duration: 2000
+          });
+          that.setData({
+            post:{
+              is_collect: !is_collect
+            }
+          });
+        } else {
+          wx.showToast({
+            title: action + '失败',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      },
+      fail: function() {
+        wx.showToast({
+          title: action + '失败',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
   },
 
   goComment() {
@@ -63,7 +117,7 @@ Page({
 
   getPostDetail() {
     let postId = this.data.postId,
-      token = store.get('accessToken'),
+      token = this.data.accessToken,
       that = this;
     wx.showLoading({
       title: '加载中',
@@ -78,7 +132,7 @@ Page({
         console.log(res);
 
         that.setData({
-          post: that.parseHtml(res.data.data)
+          post: that.parseHtml(res.data.data),
         });
       },
       complete: function() {
@@ -91,9 +145,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    let accessToken = store.get('accessToken');
     this.getHeight();
     this.setData({
-      postId: options.id
+      postId: options.id,
+      accessToken
     });
     this.getPostDetail();
   },

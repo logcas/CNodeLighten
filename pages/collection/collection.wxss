@@ -1,1 +1,66 @@
 /* pages/collection/collection.wxss */
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.container-body {
+  width: 100%;
+}
+
+.message-block {
+  margin-top: 20rpx;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.block-title, .block-content {
+  position: relative;
+  padding: 20rpx;
+}
+
+.block-title button {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.message-block .block-title text {
+  font-size: 45rpx;
+  border-bottom: 2px solid #80bd01;
+}
+
+.message-block .message-item .message-content {
+  font-size: 35rpx;
+}
+
+.message-block .message-item .message-info {
+  position: relative;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  height: 50rpx;
+}
+
+.message-info .author .avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+
+.message-info .author .loginname {
+  position: relative;
+  top: -10rpx;
+  line-height: 50rpx;
+  margin-left: 20rpx;
+}
+
+.message-block .message-time {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  font-size: 25rpx;
+  color: #999;
+}

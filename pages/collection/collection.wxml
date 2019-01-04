@@ -1,2 +1,16 @@
 <!--pages/collection/collection.wxml-->
-<text>pages/collection/collection.wxml</text>
+<view class='container'>
+  <view class='container-body'>
+    <view class='message-block'>
+      <view class='block-title'>
+        <text>收藏的主题</text>
+      </view>
+      <view class='block-content'>
+        <view hidden="{{posts.length!==0}}">暂无收藏</view>
+        <block wx:for="{{posts}}" wx:key="id">
+          <post-item post="{{item}}" data-id="{{item.id}}" data-title="{{item.title}}"></post-item>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
