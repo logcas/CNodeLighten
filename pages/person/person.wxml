@@ -5,13 +5,13 @@
     <view class='loginname'>{{data.loginname}}</view>
   </view>
   <view class='selection'>
-    <image src='../../images/icon/message.png'></image><text>创建时间：{{data.create_at}}</text>
+    <image src='../../images/icon/create_at.png'></image><text>创建时间：{{data.create_at}}</text>
   </view>
   <view class='selection score'>
-    <image src='../../images/icon/message.png'></image><text>积分：{{data.score}}</text>
+    <image src='../../images/icon/score.png'></image><text>积分：{{data.score}}</text>
   </view>
   <view class='selection'>
-    <image src='../../images/icon/message.png'></image><text>{{data.githubUsername}}</text>
+    <image src='../../images/icon/github.jpg'></image><text>{{data.githubUsername}}</text>
   </view>
   <view class='selection posts'>
     <text class='selection-tab'>最近发帖</text>

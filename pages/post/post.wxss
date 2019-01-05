@@ -28,6 +28,10 @@
   font-size: 25rpx;
 }
 
+.info navigator.info-item {
+  display: inline;
+}
+
 .content {
   font-size: 30rpx;
 }
@@ -48,9 +52,11 @@
   font-weight: bold;
 }
 
-.post-author {
-  font-weight: bold;
-  color: #44B549;
+.comment .info .post-author {
+  color: #fff;
+  padding: 5rpx;
+  background: #44B549;
+  border-radius: 5rpx;
 }
 
 .index {
@@ -58,7 +64,7 @@
 }
 
 .button-group {
-  margin: 20rpx 20rpx 0 20rpx;
+  margin: 20rpx 20rpx 20rpx 20rpx;
 }
 
 .button-group text {

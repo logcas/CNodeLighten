@@ -11,9 +11,30 @@ Page({
 
   },
 
-  validateToken(e) {
+  scanCode() {
+    let that = this;
+    wx.scanCode({
+      scanType:['qrCode'],
+      success: function(res) {
+        console.log(res);
+        let token = res.result;
+        if (!token.trim()) return;
+        that.validateToken(token);
+      },
+      fail: function(res) {
+        console.log(res);
+        console.log('fail');
+      }
+    });
+  },
+
+  getToken(e) {
     let token = e.detail.value.accessToken;
-    if(!token.trim()) return;
+    if (!token.trim()) return;
+    this.validateToken(token);
+  },
+
+  validateToken(token) {
     wx.showLoading({
       title: '正在验证',
     });

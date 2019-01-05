@@ -11,7 +11,7 @@
     <image src='../../images/icon/message.png'></image><text>消息({{count}})</text>
   </view>
   <view class='selection message' hidden="{{!hasLogin}}" bindtap='goCollection'>
-    <image src='../../images/icon/message.png'></image><text>我的收藏</text>
+    <image src='../../images/icon/collection.png'></image><text>我的收藏</text>
   </view>
   <view class='selection about' bindtap='goAbout'>
     <image src='../../images/icon/about.png'></image><text>关于</text>

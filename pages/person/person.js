@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: ''
+    loginname: ''
   },
 
   getPerson() {
@@ -17,7 +17,7 @@ Page({
       title: '正在加载',
     });
     wx.request({
-      url: 'https://cnodejs.org/api/v1/user/' + that.data.id,
+      url: 'https://cnodejs.org/api/v1/user/' + that.data.loginname,
       success: function(res) {
         console.log(res);
         wx.hideLoading();
@@ -57,7 +57,7 @@ Page({
     });
     */
     this.setData({
-      id: options.id
+      loginname: options.id
     });
     this.getPerson();
   },

@@ -13,6 +13,10 @@
   width: 100%;
 }
 
-.page-section{
+.page-section {
   margin-bottom: 20rpx;
+}
+
+.button-section{
+  margin: 0 20rpx 20rpx 20rpx;
 }
