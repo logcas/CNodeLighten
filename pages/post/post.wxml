@@ -29,6 +29,9 @@
         <text class='info-item index'>{{index+1}}楼</text>
         <text class='info-item'>{{item.create_at}}</text>
         <text class='info-item post-author' hidden="{{!(item.author.loginname === post.author.loginname)}}">楼主</text>
+        <image src='../../images/icon/like.png' class='icon-button' hidden="{{item.is_uped}}" data-id="{{item.id}}" bindtap='likeReply'></image>
+        <image src='../../images/icon/liked.png' class='icon-button' hidden="{{!item.is_uped}}" data-id="{{item.id}}" bindtap='likeReply'></image>
+        <image src='../../images/icon/reply.png' class='icon-button'></image>
       </view>
       <view>
         <template is="entry" data="{{...item.content}}" />

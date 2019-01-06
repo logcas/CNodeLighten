@@ -52,6 +52,14 @@
   font-weight: bold;
 }
 
+.icon-button {
+  position: relative;
+  top: 10rpx;
+  margin: 0 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
 .comment .info .post-author {
   color: #fff;
   padding: 5rpx;

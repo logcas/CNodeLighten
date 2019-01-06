@@ -19,6 +19,43 @@ Page({
     collect: '',
   },
 
+  likeReply(event) {
+    let token = store.get('accessToken');
+    if(!token) {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    let id = event.currentTarget.dataset.id;
+    let that = this;
+    wx.request({
+      url: 'https://cnodejs.org/api/v1/reply/' + id + '/ups',
+      method: 'POST',
+      data: {
+        accesstoken: token
+      },
+      success: function(res) {
+        if(res.data.success) {
+          let post = that.data.post;
+          post.replies.forEach(reply => {
+            if(reply.id === id) {
+              reply.is_uped = !reply.is_uped;
+            }
+          });
+          that.setData({
+            post
+          });
+        }
+      },
+      fail: function(res) {
+        console.log(res);
+      }
+    })
+  },
+
   doCollect(event) {
     let accesstoken = this.data.accessToken;
     if(!accesstoken) {
