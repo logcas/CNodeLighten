@@ -1,7 +1,7 @@
 <!--pages/post/post.wxml-->
 <import src="/towxml/entry.wxml" />
 
-<view class='container' style='height:{{height}}px;'>
+<view class='container' style='height:{{height}}px;width:{{width}}px;'>
   <view class='post'>
     <view class='title'>
       <text>{{post.title}}</text>
@@ -31,7 +31,7 @@
         <text class='info-item post-author' hidden="{{!(item.author.loginname === post.author.loginname)}}">楼主</text>
         <image src='../../images/icon/like.png' class='icon-button' hidden="{{item.is_uped}}" data-id="{{item.id}}" bindtap='likeReply'></image>
         <image src='../../images/icon/liked.png' class='icon-button' hidden="{{!item.is_uped}}" data-id="{{item.id}}" bindtap='likeReply'></image>
-        <image src='../../images/icon/reply.png' class='icon-button'></image>
+        <image src='../../images/icon/reply.png' class='icon-button' data-id="{{item.id}}" data-user="{{item.author.loginname}}" bindtap='replyComment'></image>
       </view>
       <view>
         <template is="entry" data="{{...item.content}}" />

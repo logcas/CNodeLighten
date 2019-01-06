@@ -2,8 +2,9 @@
 <view class="page-body" style="height:{{height}}px">
   <form class="page-section" bindsubmit="sendComment">
     <view class="page-section-title">Reply:{{postTitle}}</view>
+    <view class="page-section-title" hidden="{{!replyId}}">@{{replyUser}}</view>
     <view class="textarea-wrp">
-      <textarea auto-height name="comment" />
+      <textarea auto-height name="comment" auto-focus />
     </view>
     <button form-type="submit" type="primary" size="default" plain="{{false}}" disabled="{{false}}"  hover-class="other-button-hover"> 发表 </button>
   </form>

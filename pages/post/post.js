@@ -14,9 +14,28 @@ Page({
     postId: '',
     post: {},
     height: '',
+    width: '',
     article: {},
     accessToken: '',
     collect: '',
+  },
+
+  replyComment(event) {
+    let id = event.currentTarget.dataset.id,
+        user = event.currentTarget.dataset.user;
+    let token = store.get('accessToken');
+    let that = this;
+    if (token) {
+      wx.navigateTo({
+        url: '/pages/comment/comment?id=' + that.data.postId + '&title=' + that.data.post.title + '&replyId=' + id + '&replyUser=' + user
+      });
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        duration: 2000
+      });
+    }
   },
 
   likeReply(event) {
@@ -129,7 +148,8 @@ Page({
     wx.getSystemInfo({
       success: function(res) {
         that.setData({
-          height: res.windowHeight
+          height: res.windowHeight,
+          width: res.windowWidth
         });
       },
     })

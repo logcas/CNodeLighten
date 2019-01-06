@@ -18,7 +18,10 @@ Page({
 
   sendComment(e) {
     let that = this;
-    let comment = `<div class="mardown-text"><p>${e.detail.value}</p><p>来自<a href="">CNode Lighten</a>小程序</p></div>`;
+    let comment = `${e.detail.value.comment}\n来自[CNode Lighten](https://github.com/logcas/CNodeLighten)`;
+    if(this.data.replyUser) {
+      comment = `@${this.data.replyUser} ` + comment;
+    }
     let token = store.get('accessToken');
     let success = false;
     // send
@@ -30,6 +33,7 @@ Page({
       data: {
         accesstoken: token,
         content: comment,
+        reply_id: this.data.replyId
       },
       method: 'POST',
       success: function(res) {
@@ -44,10 +48,10 @@ Page({
             title: '提示',
             content: '评论发表成功',
             showCancel: false,
-            confirmText: '返回该主题',
+            confirmText: '返回',
             complete: function () {
               wx.redirectTo({
-                url: 'pages/post/post?id=' + that.data.postId + '&title=' + that.data.postTitle
+                url: '../../pages/post/post?id=' + that.data.postId + '&title=' + that.data.postTitle
               });
             }
           });
@@ -81,7 +85,9 @@ Page({
     this.getHeight();
     this.setData({
       postId: options.id,
-      postTitle: options.title
+      postTitle: options.title,
+      replyId: options.replyId || '',
+      replyUser: options.replyUser || ''
     });
   },
 
