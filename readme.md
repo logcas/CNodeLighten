@@ -23,3 +23,6 @@ https://cnodejs.org/api
 ## Screenshot
 ![pc1](http://img.lxzmww.xyz/cnodescreenshot1.jpg)
 ![pc2](http://img.lxzmww.xyz/cnodescreenshot2.jpg)
+
+## 扫码体验
+![qrcode](http://img.lxzmww.xyz/cnode/qrcode.jpg)
